@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.viewnext.busquedas.BusquedasController">
+   <children>
+      <Label layoutX="58.0" layoutY="53.0" text="Búsquedas" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="56.0" text="Búsqueda de ficheros en jar files" AnchorPane.leftAnchor="10.0" />
+      <Label layoutX="10.0" layoutY="103.0" text="Arrastra un fichero" AnchorPane.leftAnchor="10.0" />
+      <Separator layoutX="20.0" layoutY="85.0" prefHeight="1.0" prefWidth="356.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <TableView fx:id="libreriaInputTable" layoutX="10.0" layoutY="120.0" onDragDetected="#setOnDragDetectedFiles" onDragDropped="#setOnDragDroppedFiles" onDragOver="#setOnDragOverFiles" prefHeight="137.0" prefWidth="988.0" AnchorPane.leftAnchor="10.0">
+         <columns>
+            <TableColumn fx:id="columnaRutaLibreriaInput" prefWidth="927.0" text="Ruta" />
+            <TableColumn fx:id="columnaNumFilesLibreriaInput" prefWidth="60.0" text="nº files" />
+         </columns>
+      </TableView>
+      <TableView fx:id="ficheroSearchTable" layoutX="10.0" layoutY="306.0" prefHeight="330.0" prefWidth="1117.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="300.0">
+         <columns>
+            <TableColumn fx:id="columnaAuxFicheroSearch" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="1116.0000047683716" text="Fichero" />
+         </columns>
+      </TableView>
+      <ImageView fx:id="trashView" fitHeight="137.0" fitWidth="89.0" layoutX="1025.0" layoutY="152.0" onDragDropped="#setOnDragDroppedTrash" onDragEntered="#setOnDragEnteredTrash" onDragExited="#setOnDragExitedTrash" onDragOver="#setOnDragOverTrash" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="152.0">
+         <image>
+            <Image url="@../../../../resources/imagenes/trash-icon.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="filterField" layoutX="12.0" layoutY="272.0" prefHeight="25.0" prefWidth="388.0" promptText="Filtro: Nombre de clase" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="270.0" />
+      <Label layoutX="1062.0" layoutY="107.0" prefHeight="27.0" prefWidth="99.0" text="Resumen" AnchorPane.rightAnchor="70.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1129.0" layoutY="144.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <HBox layoutX="8.0" layoutY="38.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Clases:" />
+                  <TextField fx:id="numClasesField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="68.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Properties:" />
+                  <TextField fx:id="numPropertiesField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="98.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="XML" />
+                  <TextField fx:id="numXmlField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="128.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Otros" />
+                  <TextField fx:id="numOtrosField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="8.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Librerías" />
+                  <TextField fx:id="numLibreriasField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="169.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="TOTAL" />
+                  <TextField fx:id="numTotalField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <Separator layoutX="26.0" layoutY="160.0" prefHeight="3.0" prefWidth="115.0" />
+         </children>
+      </Pane>
+      <Button layoutX="917.0" layoutY="270.0" mnemonicParsing="false" onAction="#limpieza" text="Limpiar todo" AnchorPane.topAnchor="270.0" />
+   </children>
+</AnchorPane>

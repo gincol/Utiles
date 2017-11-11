@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.viewnext.encoding.VariosEncodingController">
+   <children>
+      <Label layoutX="21.0" layoutY="14.0" prefHeight="35.0" prefWidth="180.0" text="Varios Encoding" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="10.0" layoutY="102.0" prefHeight="1.0" prefWidth="356.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Label layoutX="21.0" layoutY="65.0" text="Funciones para encoding, hash, etc..." AnchorPane.leftAnchor="10.0" />
+      <Label layoutX="21.0" layoutY="121.0" text="Arrastra un fichero" AnchorPane.leftAnchor="10.0" />
+      <TableView fx:id="ficheroTable" layoutX="21.0" layoutY="138.0" onDragDetected="#setOnDragDetectedFiles" onDragDropped="#setOnDragDroppedFiles" onDragOver="#setOnDragOverFiles" prefHeight="153.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="694.0">
+        <columns>
+            <TableColumn fx:id="columnaRutaFichero" prefWidth="381.0" text="Ruta" />
+            <TableColumn fx:id="columnaHashFichero" prefWidth="214.0" text="Hash" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="trashView" fitHeight="137.0" fitWidth="89.0" layoutX="611.0" layoutY="181.0" onDragDropped="#setOnDragDroppedTrash" onDragEntered="#setOnDragEnteredTrash" onDragExited="#setOnDragExitedTrash" onDragOver="#setOnDragOverTrash" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="600.0">
+         <image>
+            <Image url="@../../../../resources/imagenes/trash-icon.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="21.0" layoutY="320.0" spacing="15.0" AnchorPane.leftAnchor="10.0" />
+      <Button layoutX="994.0" layoutY="202.0" mnemonicParsing="false" onAction="#handleHashText" text="Hash" AnchorPane.rightAnchor="263.0" />
+      <Label layoutX="726.0" layoutY="121.0" text="Texto" AnchorPane.rightAnchor="544.0" AnchorPane.topAnchor="121.0" />
+      <Button layoutX="384.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleEncode64Files" text="Encode64" />
+      <Label layoutX="14.0" layoutY="357.0" text="Texto " />
+      <TextField fx:id="salidaEncode64Txt" editable="false" layoutX="469.0" layoutY="353.0" prefHeight="25.0" prefWidth="324.0" />
+      <TextField fx:id="entradaEncode64Txt" layoutX="47.0" layoutY="353.0" prefHeight="25.0" prefWidth="324.0" />
+      <Button layoutX="384.0" layoutY="393.0" mnemonicParsing="false" onAction="#handleDecode64Files" text="Decode64" />
+      <Label layoutX="14.0" layoutY="397.0" text="Texto " />
+      <TextField fx:id="salidaDecode64Txt" editable="false" layoutX="469.0" layoutY="393.0" prefHeight="25.0" prefWidth="324.0" />
+      <TextField fx:id="entradaDecode64Txt" layoutX="47.0" layoutY="393.0" prefHeight="25.0" prefWidth="324.0" />
+      <TextArea fx:id="leeArea" layoutX="725.0" layoutY="138.0" prefHeight="153.0" prefWidth="258.0" AnchorPane.rightAnchor="317.0" AnchorPane.topAnchor="138.0" />
+      <TextArea fx:id="hashArea" editable="false" layoutX="932.0" layoutY="138.0" prefHeight="153.0" prefWidth="244.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="138.0" />
+      <Label layoutX="1047.0" layoutY="121.0" text="Hash" AnchorPane.rightAnchor="226.0" />
+      <HBox layoutX="57.0" layoutY="303.0" spacing="10.0">
+         <children>
+            <RadioButton fx:id="radioMD5" mnemonicParsing="false" selected="true" text="MD5" />
+            <RadioButton fx:id="radioSHA1" mnemonicParsing="false" text="SHA-1" />
+            <RadioButton fx:id="radioSHA256" mnemonicParsing="false" text="SHA-256" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

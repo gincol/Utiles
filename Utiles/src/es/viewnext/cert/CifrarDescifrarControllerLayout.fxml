@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.viewnext.cert.CifrarDescifrarController">
+   <children>
+      <Label layoutX="14.0" layoutY="25.0" text="Cifrar" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="15.0" layoutY="44.0" prefWidth="200.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0" />
+      <Button layoutX="14.0" layoutY="88.0" mnemonicParsing="false" onAction="#generateText" text="Generar texto" />
+      <TextField fx:id="textIn" layoutX="109.0" layoutY="88.0" prefHeight="25.0" prefWidth="1170.0" />
+      <Label layoutX="15.0" layoutY="61.0" text="Generar texto o introducirlo directamente" />
+      <Button layoutX="15.0" layoutY="132.0" mnemonicParsing="false" onAction="#getCertificate" prefHeight="25.0" prefWidth="82.0" text="Certificado" />
+      <TextField fx:id="pathCert" layoutX="109.0" layoutY="132.0" prefHeight="25.0" prefWidth="913.0" />
+      <Button layoutX="34.0" layoutY="175.0" mnemonicParsing="false" onAction="#xifrar" text="Cifrar" />
+      <TextArea fx:id="textOut" editable="false" layoutX="109.0" layoutY="175.0" prefHeight="54.0" prefWidth="1170.0" />
+      <Button layoutX="233.0" layoutY="239.0" mnemonicParsing="false" onAction="#netejar" text="Limpiar" />
+      <TextField fx:id="textPassword" layoutX="1093.0" layoutY="132.0" prefHeight="25.0" prefWidth="185.0" promptText="Sólo si es necesario" />
+      <Label layoutX="1031.0" layoutY="136.0" text="Password" />
+      <Label layoutX="15.0" layoutY="394.0" text="Descifrar" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="15.0" layoutY="432.0" prefHeight="3.0" prefWidth="653.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Label layoutX="17.0" layoutY="453.0" text="Introducir texto para descifrar o pegar" />
+      <Button layoutX="16.0" layoutY="548.0" mnemonicParsing="false" onAction="#getCertificateDes" prefHeight="25.0" prefWidth="82.0" text="Keystore" />
+      <TextField fx:id="pathCertDes" layoutX="110.0" layoutY="548.0" prefHeight="25.0" prefWidth="913.0" />
+      <Button layoutX="24.0" layoutY="591.0" mnemonicParsing="false" onAction="#desxifrar" text="Descifrar" />
+      <TextArea fx:id="textOutDes" editable="false" layoutX="108.0" layoutY="591.0" prefHeight="54.0" prefWidth="1170.0" />
+      <Button layoutX="200.0" layoutY="658.0" mnemonicParsing="false" onAction="#netejarDes" text="Limpiar" />
+      <TextField fx:id="textPasswordDes" layoutX="1093.0" layoutY="548.0" prefHeight="25.0" prefWidth="185.0" promptText="Obligatorio" />
+      <Label layoutX="1035.0" layoutY="552.0" text="Password" />
+      <Button layoutX="109.0" layoutY="239.0" mnemonicParsing="false" onAction="#copy" text="Copy text" />
+      <Button layoutX="20.0" layoutY="479.0" mnemonicParsing="false" onAction="#paste" text="Paste text" />
+      <TextArea fx:id="textInDes" layoutX="108.0" layoutY="479.0" prefHeight="54.0" prefWidth="1170.0" />
+   </children>
+</AnchorPane>

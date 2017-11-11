@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.viewnext.encoding.EncodingFilesController">
+   <children>
+      <Label layoutX="21.0" layoutY="14.0" prefHeight="35.0" prefWidth="180.0" text="Encoding Files" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="10.0" layoutY="102.0" prefHeight="1.0" prefWidth="356.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Label layoutX="21.0" layoutY="65.0" text="Funciones de resolución de encoding de ficheros o caracteres" AnchorPane.leftAnchor="10.0" />
+      <Label layoutX="21.0" layoutY="121.0" text="Arrastra un fichero" AnchorPane.leftAnchor="10.0" />
+      <TableView fx:id="ficheroTable" layoutX="21.0" layoutY="138.0" onDragDetected="#setOnDragDetectedFiles" onDragDropped="#setOnDragDroppedFiles" onDragOver="#setOnDragOverFiles" prefHeight="137.0" AnchorPane.leftAnchor="10.0">
+        <columns>
+            <TableColumn fx:id="columnaRutaFichero" prefWidth="1109.0" text="Ruta" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="trashView" fitHeight="137.0" fitWidth="89.0" layoutX="1177.0" layoutY="162.0" onDragDropped="#setOnDragDroppedTrash" onDragEntered="#setOnDragEnteredTrash" onDragExited="#setOnDragExitedTrash" onDragOver="#setOnDragOverTrash" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../resources/imagenes/trash-icon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="301.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleLeeFiles" text="Leer" />
+      <HBox layoutX="21.0" layoutY="320.0" spacing="15.0" AnchorPane.leftAnchor="10.0">
+         <children>
+            <CheckBox fx:id="cbUTF8" mnemonicParsing="false" text="UTF-8" />
+            <CheckBox fx:id="cbISO" mnemonicParsing="false" text="ISO-8859-1" />
+            <CheckBox fx:id="cbCP" mnemonicParsing="false" text="Cp1252" />
+         </children>
+      </HBox>
+      <Label layoutX="21.0" layoutY="293.0" text="Selecciona el encoding a testear y pulsa el botón de &quot;Leer&quot;" AnchorPane.leftAnchor="10.0" />
+      <Button layoutX="1097.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleEncodingFiles" text="Encoding" />
+      <Button layoutX="718.0" layoutY="316.0" mnemonicParsing="false" onAction="#handelHexFile" text="Hexadecimal" />
+      <TextArea fx:id="leeArea" editable="false" layoutX="14.0" layoutY="364.0" prefHeight="263.0" prefWidth="525.0" wrapText="true" />
+      <TextArea fx:id="hexArea" editable="false" layoutX="546.0" layoutY="364.0" prefHeight="263.0" prefWidth="428.0" wrapText="true" />
+      <TextArea fx:id="encodingArea" editable="false" layoutX="982.0" layoutY="364.0" prefHeight="263.0" prefWidth="295.0" wrapText="true" />
+   </children>
+</AnchorPane>

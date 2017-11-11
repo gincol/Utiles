@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/icu4j-56_1.jar"/>
+	<classpathentry kind="lib" path="lib/procyon-decompiler-0.5.30.jar"/>
+	<classpathentry kind="lib" path="libWsdl/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="libWsdl/groovy-2.4.7.jar"/>
+	<classpathentry kind="lib" path="libWsdl/groovy-json-2.4.7.jar"/>
+	<classpathentry kind="lib" path="libWsdl/groovy-xml-2.4.7.jar"/>
+	<classpathentry kind="lib" path="libWsdl/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="libWsdl/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="libWsdl/jcl-over-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="libWsdl/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="libWsdl/soa-model-core-1.6.0.jar" sourcepath="C:/Users/L3002788/.m2/repository/com/predic8/soa-model-core/1.6.0/soa-model-core-1.6.0-sources.jar"/>
+	<classpathentry kind="lib" path="libJdbc/db2jcc.jar"/>
+	<classpathentry kind="lib" path="libJdbc/mysql-connector-java-5.1.17.jar"/>
+	<classpathentry kind="lib" path="libJdbc/ojdbc7.jar"/>
+	<classpathentry kind="lib" path="libJdbc/jt400.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

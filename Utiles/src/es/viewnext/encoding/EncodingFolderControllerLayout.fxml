@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.viewnext.encoding.EncodingFolderController">
+   <children>
+      <Label layoutX="21.0" layoutY="14.0" prefHeight="35.0" prefWidth="275.0" text="Encoding Files In Folder" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="10.0" layoutY="102.0" prefHeight="1.0" prefWidth="356.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Label layoutX="21.0" layoutY="65.0" text="Funciones de resolución de encoding de ficheros o caracteres por carpetas" AnchorPane.leftAnchor="10.0" />
+      <Label layoutX="21.0" layoutY="121.0" text="Arrastra una carpeta" AnchorPane.leftAnchor="10.0" />
+      <TableView fx:id="ficheroInputTable" layoutX="21.0" layoutY="138.0" onDragDetected="#setOnDragDetectedFiles" onDragDropped="#setOnDragDroppedFiles" onDragOver="#setOnDragOverFiles" prefHeight="192.0" prefWidth="1133.0" AnchorPane.leftAnchor="10.0">
+        <columns>
+            <TableColumn fx:id="columnaRutaFicheroInput" prefWidth="1132.0" text="Ruta" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="trashView" fitHeight="137.0" fitWidth="89.0" layoutX="751.0" layoutY="162.0" onDragDropped="#setOnDragDroppedTrash" onDragEntered="#setOnDragEnteredTrash" onDragExited="#setOnDragExitedTrash" onDragOver="#setOnDragOverTrash" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="40.0">
+         <image>
+            <Image url="@../../../../resources/imagenes/trash-icon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="10.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleEncodingFilesInFolder" text="Encoding" AnchorPane.leftAnchor="10.0" />
+      <TableView fx:id="ficheroEncodingTable" layoutX="20.0" layoutY="345.0" prefHeight="437.0" prefWidth="1280.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <columns>
+          <TableColumn fx:id="columnaRutaFicheroEncoding" prefWidth="1061.0" text="Fichero" />
+          <TableColumn fx:id="columnaEncodingFicheroEncoding" prefWidth="218.0" text="Encoding" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

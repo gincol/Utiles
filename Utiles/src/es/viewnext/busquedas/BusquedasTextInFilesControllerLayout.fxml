@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.viewnext.busquedas.BusquedasTextInFilesController">
+   <children>
+      <Label layoutX="58.0" layoutY="53.0" text="Búsquedas" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="56.0" text="Búsqueda de texto en ficheros dentro de jar files" AnchorPane.leftAnchor="10.0" />
+      <Label layoutX="10.0" layoutY="103.0" text="Arrastra un fichero" AnchorPane.leftAnchor="10.0" />
+      <Separator layoutX="20.0" layoutY="85.0" prefHeight="1.0" prefWidth="356.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <TableView fx:id="libreriaInputTable" layoutX="10.0" layoutY="120.0" onDragDetected="#setOnDragDetectedFiles" onDragDropped="#setOnDragDroppedFiles" onDragOver="#setOnDragOverFiles" prefHeight="137.0" prefWidth="990.0" AnchorPane.leftAnchor="10.0">
+         <columns>
+            <TableColumn fx:id="columnaRutaLibreriaInput" prefWidth="923.0" text="Ruta" />
+            <TableColumn fx:id="columnaNumFilesLibreriaInput" prefWidth="66.0" text="nº files" />
+         </columns>
+      </TableView>
+      <TextField fx:id="textoFichero" layoutX="10.0" layoutY="270.0" prefHeight="25.0" prefWidth="388.0" promptText="Texto a buscar en fichero" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="270.0" />
+      <TableView fx:id="ficheroSearchTable" layoutX="10.0" layoutY="304.0" prefHeight="330.0" prefWidth="1117.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="300.0">
+         <columns>
+            <TableColumn fx:id="columnaAuxFicheroSearch" prefWidth="592.0" text="Fichero" />
+            <TableColumn fx:id="columnaTextoFicheroSearch" prefWidth="524.0" text="Texto" />
+         </columns>
+      </TableView>
+      <ImageView fx:id="trashView" fitHeight="137.0" fitWidth="89.0" layoutX="1025.0" layoutY="159.0" onDragDropped="#setOnDragDroppedTrash" onDragEntered="#setOnDragEnteredTrash" onDragExited="#setOnDragExitedTrash" onDragOver="#setOnDragOverTrash" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="159.0">
+         <image>
+            <Image url="@../../../../resources/imagenes/trash-icon.png" />
+         </image>
+      </ImageView>
+      <Button defaultButton="true" layoutX="383.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleSearchTextInFile" text="Buscar" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="270.0" />
+      <Label layoutX="1122.0" layoutY="107.0" prefHeight="27.0" prefWidth="99.0" text="Resumen" AnchorPane.rightAnchor="70.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1147.0" layoutY="144.0" prefHeight="208.0" prefWidth="143.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <HBox layoutX="8.0" layoutY="38.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Clases:" />
+                  <TextField fx:id="numClasesField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="68.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Properties:" />
+                  <TextField fx:id="numPropertiesField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="98.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="XML" />
+                  <TextField fx:id="numXmlField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="128.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Otros" />
+                  <TextField fx:id="numOtrosField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="8.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="Librerías" />
+                  <TextField fx:id="numLibreriasField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="8.0" layoutY="169.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="59.0" text="TOTAL" />
+                  <TextField fx:id="numTotalField" alignment="CENTER_RIGHT" disable="true" prefHeight="25.0" prefWidth="59.0" />
+               </children>
+            </HBox>
+            <Separator layoutX="26.0" layoutY="161.0" prefHeight="3.0" prefWidth="115.0" />
+         </children>
+      </Pane>
+      <Button layoutX="916.0" layoutY="270.0" mnemonicParsing="false" onAction="#limpieza" text="Limpiar todo" AnchorPane.topAnchor="270.0" />
+      <Label layoutX="477.0" layoutY="273.0" text="Es un proceso lento, tenga paciencia por favor">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

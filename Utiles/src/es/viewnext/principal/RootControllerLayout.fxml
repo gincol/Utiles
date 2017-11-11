@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.viewnext.principal.RootController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleInicio" text="Inicio" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Búsquedas">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleBusquedaFichero" text="Buscar fichero en jar" />
+              <MenuItem mnemonicParsing="false" onAction="#handleBusquedaTexto" text="Buscar texto en jar" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Encoding">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleEncodingFiles" text="Encoding Files" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleEncodingFilesInFolder" text="Encoding Files in Folder" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleEncodingConversionFiles" text="Encoding File Convert" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleVariosEncoding" text="Varios (Base64, Hash...)" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Certificados">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleCertFromURL" text="Recuperar certificado desde URL" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleKeystore" text="Almacén de certificados" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleXifra" text="Cifrar/Descifrar" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="NetWork">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleWS" text="WebServices" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleJdbc" text="JDBC" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Monitorización">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleMonitorizacion" text="Servidores" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleAcercaDe" text="Acerca de" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane fx:id="centerAnchor" prefHeight="950.0" prefWidth="1400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="618.0" layoutY="168.0" prefHeight="93.0" prefWidth="165.0" text="Utiles" AnchorPane.leftAnchor="618.0" AnchorPane.rightAnchor="617.0">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="96.0" fitWidth="266.0" layoutX="567.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/imagenes/viewnext.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane fx:id="bottonAnchor" prefHeight="20.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <AnchorPane fx:id="leftAnchor" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane fx:id="rightAnchor" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
